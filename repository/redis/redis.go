@@ -29,3 +29,7 @@ func Init() error {
 
 	return nil
 }
+
+func Close() {
+	_ = rdb.Close()
+}

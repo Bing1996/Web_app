@@ -1,10 +1,10 @@
 package mysql
 
 import (
+	"Web_App/asset/settings"
 	"fmt"
 	"net/url"
 
-	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -13,27 +13,20 @@ import (
 var db *gorm.DB
 
 func Init() error {
-	host := viper.GetString("mysql.host")
-	port := viper.GetInt("mysql.port")
-	database := viper.GetString("mysql.database_name")
-	username := viper.GetString("mysql.user")
-	password := viper.GetString("mysql.password")
-	charset := viper.GetString("mysql.charset")
-
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=True&loc=%s",
-		username,
-		password,
-		host,
-		port,
-		database,
-		charset,
+		settings.Conf.MysqlConfig.User,
+		settings.Conf.MysqlConfig.Password,
+		settings.Conf.MysqlConfig.Host,
+		settings.Conf.MysqlConfig.Port,
+		settings.Conf.MysqlConfig.DataBaseName,
+		settings.Conf.MysqlConfig.Charset,
 		url.QueryEscape("Local"),
 	)
 
 	// connect to Mysql
 	dbConn, err := gorm.Open(mysql.New(mysql.Config{
 		DSN:        dsn,
-		DriverName: viper.GetString("datasource.driverName"),
+		DriverName: settings.Conf.MysqlConfig.DriverName,
 	}))
 	if err != nil {
 		zap.L().Fatal(fmt.Sprintf("cannot connect to mysql: %s", err))
@@ -47,6 +40,18 @@ func Init() error {
 	//	return err
 	//}
 
+	sqlDB, _ := dbConn.DB()
+	sqlDB.SetMaxOpenConns(settings.Conf.MysqlConfig.MaxOpenConns)
+	sqlDB.SetMaxIdleConns(settings.Conf.MysqlConfig.MaxIdleConns)
+
 	db = dbConn
 	return nil
+}
+
+func Close() {
+	s, err := db.DB()
+	if err != nil {
+		return
+	}
+	_ = s.Close()
 }

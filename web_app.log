@@ -8,3 +8,13 @@
 {"level":"INFO","time":"2023-01-13T17:59:58.212+0800","caller":"Web_App/main.go:51","msg":"server shutdown..."}
 {"level":"INFO","time":"2023-01-13T17:59:58.213+0800","caller":"Web_App/main.go:41","msg":"start server successfully!"}
 {"level":"INFO","time":"2023-01-13T17:59:58.213+0800","caller":"Web_App/main.go:60","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-13T21:03:02.054+0800","caller":"Web_App/main.go:49","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-13T21:03:02.054+0800","caller":"Web_App/main.go:58","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-13T21:03:06.948+0800","caller":"Web_App/main.go:49","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-13T21:03:06.948+0800","caller":"Web_App/main.go:58","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-13T21:25:55.819+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-13T21:25:55.820+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-13T21:25:59.802+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-13T21:25:59.803+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-13T21:32:56.683+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-13T21:32:56.684+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}

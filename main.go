@@ -14,8 +14,6 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/spf13/viper"
-
 	"go.uber.org/zap"
 )
 
@@ -28,7 +26,7 @@ func main() {
 
 	// 启动服务
 	server := &http.Server{
-		Addr:    fmt.Sprintf(":%d", viper.GetInt("app.port")),
+		Addr:    fmt.Sprintf(":%d", settings.Conf.Port),
 		Handler: r,
 	}
 
@@ -71,16 +69,19 @@ func appInit() {
 		fmt.Printf("init log failed, err: %s", err)
 		return
 	}
+	defer zap.L().Sync()
 
 	// 初始化Mysql，利用GORM框架与mysql引擎进行连接
 	if err := mysql.Init(); err != nil {
 		fmt.Printf("init mysql failed, err: %s", err)
 		return
 	}
+	defer mysql.Close()
 
 	// 初始化Redis
 	if err := redis.Init(); err != nil {
 		fmt.Printf("init redis failed, err: %s", err)
 		return
 	}
+	defer redis.Close()
 }

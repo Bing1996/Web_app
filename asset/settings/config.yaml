@@ -1,7 +1,8 @@
 app:
   name: "web_app"
   mode: "dev"
-  port: 8081
+  port: 9090
+  version: "0.1"
 log:
   level: "debug"
   filename: "web_app.log"
@@ -10,13 +11,14 @@ log:
   max_backups: 7
 mysql:
   host: "127.0.0.1"
-  port: "3306"
+  port: 3306
   user: "shengbin"
   password: "2236141"
   database_name: "test"
   charset: utf8mb4
   max_open_conns: 200
   max_idle_conns: 200
+  driver_name: "mysql"
 redis:
   host: "127.0.0.1"
   port: 6379

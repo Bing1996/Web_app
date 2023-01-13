@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"Web_App/asset/settings"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -9,10 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/natefinch/lumberjack"
-	"github.com/spf13/viper"
-
 	"github.com/gin-gonic/gin"
+	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -29,17 +28,17 @@ type LogConfig struct {
 
 func Init() (err error) {
 	writeSyncer := getLogWriter(
-		viper.GetString("log.filename"),
-		viper.GetInt("log.maxSize"),
-		viper.GetInt("log.maxBackups"),
-		viper.GetInt("log.maxAge"),
+		settings.Conf.LogConfig.Filename,
+		settings.Conf.LogConfig.MaxSize,
+		settings.Conf.LogConfig.MaxBackups,
+		settings.Conf.LogConfig.MaxAge,
 	)
 
 	encoder := getEncoder()
 
 	var l = new(zapcore.Level)
 
-	if err = l.UnmarshalText([]byte(viper.GetString("log.level"))); err != nil {
+	if err = l.UnmarshalText([]byte(settings.Conf.LogConfig.Level)); err != nil {
 		return
 	}
 
