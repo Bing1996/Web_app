@@ -1,0 +1,10 @@
+{"level":"INFO","time":"2023-01-13T17:00:17.697+0800","caller":"Web_App/main.go:25","msg":"start server successfully!"}
+{"level":"INFO","time":"2023-01-13T17:01:06.552+0800","caller":"Web_App/main.go:25","msg":"start server successfully!"}
+{"level":"FATAL","time":"2023-01-13T17:22:30.423+0800","caller":"mysql/mysql.go:39","msg":"cannot connect to mysql: Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)"}
+{"level":"INFO","time":"2023-01-13T17:23:18.821+0800","caller":"Web_App/main.go:31","msg":"start server successfully!"}
+{"level":"FATAL","time":"2023-01-13T17:39:05.553+0800","caller":"redis/redis.go:26","msg":"cannot to connect to Redis Server"}
+{"level":"INFO","time":"2023-01-13T17:42:04.722+0800","caller":"Web_App/main.go:38","msg":"start server successfully!"}
+{"level":"FATAL","time":"2023-01-13T17:58:34.194+0800","caller":"redis/redis.go:26","msg":"cannot to connect to Redis Server"}
+{"level":"INFO","time":"2023-01-13T17:59:58.212+0800","caller":"Web_App/main.go:51","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-13T17:59:58.213+0800","caller":"Web_App/main.go:41","msg":"start server successfully!"}
+{"level":"INFO","time":"2023-01-13T17:59:58.213+0800","caller":"Web_App/main.go:60","msg":"Server exiting"}
