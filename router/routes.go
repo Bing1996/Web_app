@@ -7,8 +7,8 @@ import (
 )
 
 func Setup() *gin.Engine {
-	r := gin.Default()
-	r.Use(logger.GinLogger())
+	r := gin.New()
+	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 
 	return r
 }
