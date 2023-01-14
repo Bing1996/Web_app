@@ -14,13 +14,17 @@ import (
 var Conf = new(AppConfig)
 
 type AppConfig struct {
-	Name         string `mapstructure:"name"`
-	Mode         string `mapstructure:"mode"`
-	Version      string `mapstructure:"version"`
-	Port         int    `mapstructure:"port"`
+	*GinConfig   `mapstructure:"app"`
 	*LogConfig   `mapstructure:"log"`
 	*MysqlConfig `mapstructure:"mysql"`
 	*RedisConfig `mapstructure:"redis"`
+}
+
+type GinConfig struct {
+	Name    string `mapstructure:"name"`
+	Mode    string `mapstructure:"mode"`
+	Version string `mapstructure:"version"`
+	Port    int    `mapstructure:"port"`
 }
 
 type LogConfig struct {

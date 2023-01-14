@@ -18,3 +18,71 @@
 {"level":"INFO","time":"2023-01-13T21:25:59.803+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
 {"level":"INFO","time":"2023-01-13T21:32:56.683+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
 {"level":"INFO","time":"2023-01-13T21:32:56.684+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
+{"level":"FATAL","time":"2023-01-14T18:24:05.438+0800","caller":"mysql/mysql.go:32","msg":"cannot connect to mysql: dial tcp 1.12.62.141:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"FATAL","time":"2023-01-14T18:25:38.852+0800","caller":"mysql/mysql.go:32","msg":"cannot connect to mysql: dial tcp 1.12.62.141:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"FATAL","time":"2023-01-14T18:28:32.625+0800","caller":"mysql/mysql.go:32","msg":"cannot connect to mysql: dial tcp 1.12.62.141:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"level":"INFO","time":"2023-01-14T18:34:02.953+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T18:34:02.954+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T18:35:24.668+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T18:35:24.669+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T18:38:45.185+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T18:38:45.186+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T18:42:32.778+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T18:42:32.779+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T18:44:06.891+0800","caller":"Web_App/main.go:49","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T18:44:06.892+0800","caller":"Web_App/main.go:58","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T18:44:13.088+0800","caller":"logger/logger.go:63","msg":"/","status":404,"method":"GET","path":"/","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T18:44:13.193+0800","caller":"logger/logger.go:63","msg":"/favicon.ico","status":404,"method":"GET","path":"/favicon.ico","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T18:44:23.193+0800","caller":"logger/logger.go:63","msg":"/hello","status":200,"method":"GET","path":"/hello","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76","errors":"","code":0.0008011}
+{"level":"INFO","time":"2023-01-14T18:44:28.872+0800","caller":"Web_App/main.go:49","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T18:44:28.872+0800","caller":"Web_App/main.go:58","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T18:45:16.500+0800","caller":"logger/logger.go:63","msg":"/hello","status":200,"method":"GET","path":"/hello","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76","errors":"","code":0.0005183}
+{"level":"INFO","time":"2023-01-14T18:45:49.414+0800","caller":"Web_App/main.go:49","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T18:45:49.414+0800","caller":"Web_App/main.go:58","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T18:45:56.019+0800","caller":"logger/logger.go:63","msg":"/hello","status":200,"method":"GET","path":"/hello","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T18:45:57.689+0800","caller":"logger/logger.go:63","msg":"/hello","status":200,"method":"GET","path":"/hello","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T18:46:01.546+0800","caller":"logger/logger.go:63","msg":"/hello","status":200,"method":"GET","path":"/hello","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T18:54:04.135+0800","caller":"Web_App/main.go:49","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T18:54:04.142+0800","caller":"Web_App/main.go:58","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T19:00:04.969+0800","caller":"logger/logger.go:63","msg":"/hello","status":200,"method":"GET","path":"/hello","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T19:00:11.573+0800","caller":"logger/logger.go:63","msg":"/hello","status":200,"method":"GET","path":"/hello","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T19:03:02.834+0800","caller":"Web_App/main.go:49","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T19:03:02.834+0800","caller":"Web_App/main.go:58","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T19:03:52.520+0800","caller":"logger/logger.go:63","msg":"/hello","status":200,"method":"GET","path":"/hello","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T19:06:51.265+0800","caller":"Web_App/main.go:49","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T19:06:51.265+0800","caller":"Web_App/main.go:58","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T20:23:24.514+0800","caller":"logger/logger.go:63","msg":"/hello","status":200,"method":"GET","path":"/hello","query":"","ip":"192.168.101.9","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T20:23:24.562+0800","caller":"logger/logger.go:63","msg":"/favicon.ico","status":404,"method":"GET","path":"/favicon.ico","query":"","ip":"192.168.101.9","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T20:29:28.592+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T20:29:28.592+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T22:15:43.040+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":400,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T22:16:22.385+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":400,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0.0033833}
+{"level":"INFO","time":"2023-01-14T22:17:07.509+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":400,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0.0074506}
+{"level":"INFO","time":"2023-01-14T22:17:23.082+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T22:17:23.082+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T22:17:28.009+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":400,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T22:17:30.451+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":400,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T22:18:05.971+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T22:18:05.975+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T22:18:10.800+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":400,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T22:18:40.149+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":200,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0.0080188}
+{"level":"INFO","time":"2023-01-14T22:18:56.997+0800","caller":"Web_App/main.go:47","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T22:18:56.997+0800","caller":"Web_App/main.go:56","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T22:20:03.568+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":200,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":12.45459}
+{"level":"INFO","time":"2023-01-14T22:30:26.850+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":200,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":149.6080991}
+{"level":"INFO","time":"2023-01-14T22:50:09.814+0800","caller":"Web_App/main.go:48","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T22:50:09.814+0800","caller":"Web_App/main.go:57","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T22:50:15.128+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":200,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0.000689}
+{"level":"INFO","time":"2023-01-14T22:50:17.605+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":200,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0.0035146}
+{"level":"INFO","time":"2023-01-14T22:50:49.301+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":400,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T23:00:59.321+0800","caller":"Web_App/main.go:48","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T23:00:59.321+0800","caller":"Web_App/main.go:57","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T23:01:21.854+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":400,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0}
+{"level":"INFO","time":"2023-01-14T23:06:31.570+0800","caller":"Web_App/main.go:48","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T23:06:31.570+0800","caller":"Web_App/main.go:57","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T23:06:37.719+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":400,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0.0016447}
+{"level":"INFO","time":"2023-01-14T23:09:26.302+0800","caller":"Web_App/main.go:48","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T23:09:26.302+0800","caller":"Web_App/main.go:57","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T23:10:51.297+0800","caller":"Web_App/main.go:48","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-14T23:10:51.298+0800","caller":"Web_App/main.go:57","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-14T23:10:56.232+0800","caller":"logger/logger.go:63","msg":"/api/auth/register","status":400,"method":"POST","path":"/api/auth/register","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0}

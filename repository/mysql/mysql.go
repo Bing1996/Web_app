@@ -33,13 +33,6 @@ func Init() error {
 		return err
 	}
 
-	// AutoMigrate
-	//err = db.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&model.User{})
-	//if err != nil {
-	//	zap.L().Fatal(fmt.Sprintf("cannot create table: %s", err))
-	//	return err
-	//}
-
 	sqlDB, _ := dbConn.DB()
 	sqlDB.SetMaxOpenConns(settings.Conf.MysqlConfig.MaxOpenConns)
 	sqlDB.SetMaxIdleConns(settings.Conf.MysqlConfig.MaxIdleConns)

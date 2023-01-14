@@ -2,6 +2,7 @@ package main
 
 import (
 	"Web_App/asset/settings"
+	"Web_App/common"
 	"Web_App/middleware/logger"
 	"Web_App/repository/mysql"
 	"Web_App/repository/redis"
@@ -26,7 +27,7 @@ func main() {
 
 	// 启动服务
 	server := &http.Server{
-		Addr:    fmt.Sprintf(":%d", settings.Conf.Port),
+		Addr:    fmt.Sprintf(":%d", settings.Conf.GinConfig.Port),
 		Handler: r,
 	}
 
@@ -84,4 +85,16 @@ func appInit() {
 		return
 	}
 	defer redis.Close()
+
+	// 初始化Snowflake
+	if err := common.SnowFlakeInit("2023-01-10", 1); err != nil {
+		fmt.Printf("init snowflake failed, err: %s", err.Error())
+		return
+	}
+
+	// 初始化Validator校验器翻译
+	if err := common.InitTrans("zh"); err != nil {
+		fmt.Printf("init translate failed, err: %s", err.Error())
+		return
+	}
 }
