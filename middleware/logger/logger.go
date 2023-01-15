@@ -26,6 +26,7 @@ type LogConfig struct {
 	MaxBackups int    `json:"max_backups,omitempty"`
 }
 
+// Init 创建日志实例
 func Init() (err error) {
 	writeSyncer := getLogWriter(
 		settings.Conf.LogConfig.Filename,
@@ -42,7 +43,20 @@ func Init() (err error) {
 		return
 	}
 
-	core := zapcore.NewCore(encoder, writeSyncer, l)
+	var core zapcore.Core
+	if settings.Conf.GinConfig.Mode == "dev" {
+		// 开发模式，日志输出至终端
+		consoleEncoder := zapcore.NewConsoleEncoder(zap.NewDevelopmentEncoderConfig())
+		core = zapcore.NewTee(
+			// 文件输出编码
+			zapcore.NewCore(encoder, writeSyncer, l),
+			// 终端输出编码
+			zapcore.NewCore(consoleEncoder, zapcore.Lock(os.Stdout), zapcore.DebugLevel),
+		)
+	} else {
+		core = zapcore.NewCore(encoder, writeSyncer, l)
+	}
+
 	logger = zap.New(core, zap.AddCaller())
 
 	// 替换zap包中全局logger实例，后续在其它保重只需要只用zap.L()调用即可

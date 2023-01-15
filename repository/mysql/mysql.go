@@ -2,6 +2,7 @@ package mysql
 
 import (
 	"Web_App/asset/settings"
+	"Web_App/model"
 	"fmt"
 	"net/url"
 
@@ -10,7 +11,10 @@ import (
 	"gorm.io/gorm"
 )
 
-var db *gorm.DB
+var (
+	db      *gorm.DB
+	DBMulti = make(map[string]*gorm.DB)
+)
 
 func Init() error {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=True&loc=%s",
@@ -38,6 +42,12 @@ func Init() error {
 	sqlDB.SetMaxIdleConns(settings.Conf.MysqlConfig.MaxIdleConns)
 
 	db = dbConn
+
+	DBMulti["cloud"] = dbConn
+	if err = registerAllModelTable(); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -47,4 +57,45 @@ func Close() {
 		return
 	}
 	_ = s.Close()
+}
+
+// 注册所有基于Model的关键表
+func registerAllModelTable() error {
+	// 创建用户表
+	if !(DBMulti["cloud"]).Migrator().HasTable("users") {
+		fmt.Printf("table %s not found, create table...\n", "user")
+		err := (DBMulti["cloud"]).Migrator().CreateTable(&model.User{})
+		if err != nil {
+			// 创建table失败
+			return err
+		}
+	} else {
+		fmt.Printf("table %s found\n", "user")
+	}
+
+	// 创建社区表
+	if !(DBMulti["cloud"]).Migrator().HasTable("communities") {
+		fmt.Printf("table %s not found, create table...\n", "community")
+		err := (DBMulti["cloud"]).Migrator().CreateTable(&model.Community{})
+		if err != nil {
+			// 创建table失败
+			return err
+		}
+	} else {
+		fmt.Printf("table %s found\n", "community")
+	}
+
+	// 创建帖子数据库
+	if !(DBMulti["cloud"]).Migrator().HasTable("posts") {
+		fmt.Printf("table %s not found, create table...\n", "posts")
+		err := (DBMulti["cloud"]).Migrator().CreateTable(&model.Post{})
+		if err != nil {
+			// 创建table失败
+			return err
+		}
+	} else {
+		fmt.Printf("table %s found\n", "posts")
+	}
+
+	return nil
 }

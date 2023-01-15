@@ -77,14 +77,14 @@ func appInit() {
 		fmt.Printf("init mysql failed, err: %s", err)
 		return
 	}
-	defer mysql.Close()
+	//defer mysql.Close()
 
 	// 初始化Redis
 	if err := redis.Init(); err != nil {
 		fmt.Printf("init redis failed, err: %s", err)
 		return
 	}
-	defer redis.Close()
+	//defer redis.Close()
 
 	// 初始化Snowflake
 	if err := common.SnowFlakeInit("2023-01-10", 1); err != nil {
