@@ -5,7 +5,9 @@ import (
 	"errors"
 )
 
-var ErrorPostNotFound = errors.New("post not found")
+var (
+	ErrorPostNotFound = errors.New("post not found")
+)
 
 func InsertNewPost(p model.Post) error {
 	err := db.Model(model.Post{}).Create(&p).Error
@@ -19,4 +21,23 @@ func FindPostByPostID(id int64) (post model.Post, err error) {
 		return post, ErrorPostNotFound
 	}
 	return post, nil
+}
+
+// QueryPostByPage 分页查询
+func QueryPostByPage(page model.Page) (model.PostPageDetail, error) {
+	var total int64
+	var post []model.Post
+	if err := db.Limit(page.PageSize).Offset((page.Offset - 1) * page.PageSize).Find(&post).Error; err != nil {
+		return model.PostPageDetail{}, err
+	}
+
+	db.Model(&post).Count(&total)
+
+	var response = model.PostPageDetail{
+		Total:       int(total),
+		CurrentPage: page.Offset,
+		MultiPost:   post,
+	}
+
+	return response, nil
 }

@@ -13,9 +13,15 @@ type Post struct {
 }
 
 type PostDetail struct {
-	Title   string
-	Content string
-	Status  bool
+	Title   string `json:"title,omitempty"`
+	Content string `json:"content,omitempty"`
+	Status  bool   `json:"status,omitempty"`
 	*User
 	*Community
+}
+
+type PostPageDetail struct {
+	Total       int         `json:"total,omitempty"`
+	CurrentPage int         `json:"current_page,omitempty"`
+	MultiPost   interface{} `json:"post_list,omitempty"`
 }

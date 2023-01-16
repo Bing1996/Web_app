@@ -67,3 +67,23 @@ func GetPostDetail() gin.HandlerFunc {
 		ResponseSuccessful(context, postDetail)
 	}
 }
+
+// ShowPostList 分页查询帖子列表
+func ShowPostList() gin.HandlerFunc {
+	return func(context *gin.Context) {
+		var page model.Page
+		if context.Bind(&page) != nil {
+			ResponseError(context, CodeInvalidParam)
+			return
+		}
+
+		// 分页查询
+		response, err := service.GetPostByPage(page)
+		if err != nil {
+			ResponseError(context, CodeServerBusy)
+			return
+		}
+
+		ResponseSuccessful(context, response)
+	}
+}

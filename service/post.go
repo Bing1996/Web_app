@@ -63,3 +63,13 @@ func GetPostByID(postID int64) (model.PostDetail, error) {
 
 	return postDetail, nil
 }
+
+func GetPostByPage(page model.Page) (response model.PostPageDetail, err error) {
+	// 分页查询
+	response, err = mysql.QueryPostByPage(page)
+	if err != nil {
+		return model.PostPageDetail{}, err
+	}
+
+	return response, nil
+}
