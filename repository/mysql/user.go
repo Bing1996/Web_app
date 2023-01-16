@@ -45,3 +45,13 @@ func FindUserByName(username string) (user model.User, err error) {
 
 	return user, nil
 }
+
+func FindUserByID(userID int64) (user model.User, err error) {
+	db.First(&user, "user_id = ?", userID)
+
+	if user.UserName == "" {
+		return user, ErrorQueryUserNotFound
+	}
+
+	return user, nil
+}

@@ -31,3 +31,35 @@ func CreatePost(username string, request model.ParamCreatePost) error {
 	return nil
 
 }
+
+// GetPostByID 查询帖子的业务逻辑
+func GetPostByID(postID int64) (model.PostDetail, error) {
+	// 查询帖子详情
+	post, err := mysql.FindPostByPostID(postID)
+	if err != nil {
+		return model.PostDetail{}, err
+	}
+
+	// 查询用户信息
+	userFromAuthorID, err := mysql.FindUserByID(post.AuthorID)
+	if err != nil {
+		return model.PostDetail{}, err
+	}
+
+	// 查询社区信息
+	community, err := mysql.FindCommunityByID(post.CommunityID)
+	if err != nil {
+		return model.PostDetail{}, err
+	}
+
+	// 成功查询到所有事务信息
+	postDetail := model.PostDetail{
+		Title:     post.Title,
+		Content:   post.Content,
+		Status:    post.Status,
+		User:      &userFromAuthorID,
+		Community: &community,
+	}
+
+	return postDetail, nil
+}

@@ -18,3 +18,8 @@ type ParamCreatePost struct {
 	Title   string `json:"title,omitempty" binding:"min=3,max=128,required"`
 	Content string `json:"content,omitempty" binding:"min=1,max=8192,required"`
 }
+
+type ParamCreateCommunity struct {
+	CommunityName string `json:"community_name,omitempty" binding:"required,max=64"`
+	Introduction  string `json:"introduction,omitempty" binding:"required,max=128"`
+}

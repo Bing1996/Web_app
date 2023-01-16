@@ -11,3 +11,11 @@ type Post struct {
 	CommunityID int    `json:"community_id,omitempty" gorm:"column:community_id;type:int(10);not null"`
 	Status      bool   `json:"status,omitempty" gorm:"column:status;type:tinyint(4);not null"`
 }
+
+type PostDetail struct {
+	Title   string
+	Content string
+	Status  bool
+	*User
+	*Community
+}

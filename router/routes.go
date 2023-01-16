@@ -36,12 +36,15 @@ func Setup() *gin.Engine {
 	communityGroup := r.Group("/api/community", middleware.HMACAuthMiddleware())
 	{
 		communityGroup.GET("/getAll", controller.CommunityList())
+		communityGroup.POST("/create", controller.CreateCommunity())
 	}
 
 	// 帖子服务
 	postGroup := r.Group("/api/post", middleware.HMACAuthMiddleware())
 	{
 		postGroup.POST("create", controller.CreatePost())
+		postGroup.GET("/:post_id", controller.GetPostDetail())
+		// TODO 帖子的分页列表查询功能
 	}
 
 	return r

@@ -6,8 +6,10 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
+	"strconv"
 )
 
+// CreatePost 创建帖子句柄
 func CreatePost() gin.HandlerFunc {
 	return func(context *gin.Context) {
 		var request model.ParamCreatePost
@@ -40,5 +42,28 @@ func CreatePost() gin.HandlerFunc {
 			"title":  request.Title,
 		})
 
+	}
+}
+
+// GetPostDetail 查询帖子详情
+func GetPostDetail() gin.HandlerFunc {
+	return func(context *gin.Context) {
+		// 获取参数
+		param := context.Param("post_id")
+		postId, err := strconv.ParseInt(param, 10, 64)
+		if err != nil {
+			ResponseError(context, CodeInvalidParam)
+			return
+		}
+
+		// 基于帖子ID查询详情
+		postDetail, err := service.GetPostByID(postId)
+		if err != nil {
+			ResponseErrorWithMsg(context, CodeServerBusy, err.Error())
+			return
+		}
+
+		// 成功查询返回
+		ResponseSuccessful(context, postDetail)
 	}
 }
