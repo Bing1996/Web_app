@@ -23,3 +23,8 @@ type ParamCreateCommunity struct {
 	CommunityName string `json:"community_name,omitempty" binding:"required,max=64"`
 	Introduction  string `json:"introduction,omitempty" binding:"required,max=128"`
 }
+
+type ParamNewVote struct {
+	PostID    string `json:"post_id" binding:"required"`
+	Direction int8   `json:"direction,string"`
+}

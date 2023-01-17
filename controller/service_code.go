@@ -15,6 +15,9 @@ const (
 	CodeInvalidTokenFormat
 
 	CodeCtxCurrentUserNotFound
+	CodeUserNeedToReLogin
+
+	CodeUserRepeatVote
 )
 
 var codeMsgMap = map[ResponseCode]string{
@@ -30,6 +33,9 @@ var codeMsgMap = map[ResponseCode]string{
 	CodeInvalidTokenFormat:       "请求头中Authoritarian格式有误",
 
 	CodeCtxCurrentUserNotFound: "context中无用户信息",
+	CodeUserNeedToReLogin:      "用户需要重新登陆",
+
+	CodeUserRepeatVote: "重复投票",
 }
 
 func (r ResponseCode) Msg() string {

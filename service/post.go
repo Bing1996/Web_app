@@ -4,7 +4,9 @@ import (
 	"Web_App/common"
 	"Web_App/model"
 	"Web_App/repository/mysql"
+	"Web_App/repository/redis"
 	"go.uber.org/zap"
+	"time"
 )
 
 func CreatePost(username string, request model.ParamCreatePost) error {
@@ -27,8 +29,12 @@ func CreatePost(username string, request model.ParamCreatePost) error {
 		zap.L().Fatal("cannot create post", zap.Error(err))
 		return err
 	}
+
+	// 向Redis存入创建时间
+	err = redis.SavePostCreateTime(post.PostID, time.Now().Unix())
+
 	// 成功
-	return nil
+	return err
 
 }
 

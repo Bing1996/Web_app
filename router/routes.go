@@ -44,8 +44,8 @@ func Setup() *gin.Engine {
 	{
 		postGroup.POST("create", controller.CreatePost())
 		postGroup.GET("/:post_id", controller.GetPostDetail())
-		// TODO 帖子的分页列表查询功能
 		postGroup.GET("/showList", controller.ShowPostList())
+		postGroup.POST("/vote", controller.VoteForPost())
 	}
 
 	return r

@@ -40,6 +40,9 @@ func HMACAuthMiddleware() gin.HandlerFunc {
 
 		// 保存至context中
 		context.Set(controller.CtxCurrentUser, claims.UserName)
+
+		// 保存为int64的类型，注意拿去的any类型断言
+		context.Set(controller.CtxCurrentUserID, claims.UserID)
 		// 后续通过Get拿到username名字
 		context.Next()
 	}
