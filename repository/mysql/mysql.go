@@ -73,29 +73,5 @@ func registerAllModelTable() error {
 		fmt.Printf("table %s found\n", "user")
 	}
 
-	// 创建社区表
-	if !(DBMulti["cloud"]).Migrator().HasTable("communities") {
-		fmt.Printf("table %s not found, create table...\n", "community")
-		err := (DBMulti["cloud"]).Migrator().CreateTable(&model.Community{})
-		if err != nil {
-			// 创建table失败
-			return err
-		}
-	} else {
-		fmt.Printf("table %s found\n", "community")
-	}
-
-	// 创建帖子数据库
-	if !(DBMulti["cloud"]).Migrator().HasTable("posts") {
-		fmt.Printf("table %s not found, create table...\n", "posts")
-		err := (DBMulti["cloud"]).Migrator().CreateTable(&model.Post{})
-		if err != nil {
-			// 创建table失败
-			return err
-		}
-	} else {
-		fmt.Printf("table %s found\n", "posts")
-	}
-
 	return nil
 }
