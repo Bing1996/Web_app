@@ -396,3 +396,5 @@
 {"level":"INFO","time":"2023-01-17T23:24:32.469+0800","caller":"logger/logger.go:77","msg":"/api/post/vote","status":200,"method":"POST","path":"/api/post/vote","query":"","ip":"192.168.101.9","user-agent":"PostmanRuntime/7.30.0","errors":"","code":0.0263627}
 {"level":"INFO","time":"2023-01-17T23:24:49.758+0800","caller":"Web_App/main.go:48","msg":"server shutdown..."}
 {"level":"INFO","time":"2023-01-17T23:24:49.758+0800","caller":"Web_App/main.go:57","msg":"Server exiting"}
+{"level":"INFO","time":"2023-01-18T10:06:43.212+0800","caller":"Web_App/main.go:48","msg":"server shutdown..."}
+{"level":"INFO","time":"2023-01-18T10:06:43.212+0800","caller":"Web_App/main.go:57","msg":"Server exiting"}
